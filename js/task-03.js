@@ -13,16 +13,15 @@ const images = [
   },
 ];
 
+const qs = (selector) => document.querySelector(selector);
 
-
-const item = document.querySelector(".gallery")
-let a = images.map(ad=>ad.url);
-let b = images.map(op=>op.alt);
+const item = qs(".gallery")
+let addres = images.map(addr=>addr.url);
+let descr = images.map(dscr=>dscr.alt);
 let markup="";
-for(let i= 0; i<a.length;i++){
-  markup+=`<img class="image" scr="${a[i]}" alt="${b[i]}"></img>`
+for(let i= 0; i<addres.length;i++){
+  markup +=`<img style="display:flex; margin-bottom:20px"class="image" src="${addres[i]}" alt="${descr[i]}" width="600px "/>`
 }
-console.log(markup)
 
 item.insertAdjacentHTML("beforeend", markup);
  
