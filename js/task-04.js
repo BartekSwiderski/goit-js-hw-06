@@ -6,7 +6,7 @@ const btnClick = (a) => {
    if (a ==='minus') counterValue--;
    if (a ==='plus') counterValue++;
     value.innerHTML = counterValue
-};
+}; 
 
 const minusBtn = qs('[data-action="decrement"]');
 const plusBtn = qs('[data-action="increment"]');
