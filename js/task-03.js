@@ -14,14 +14,12 @@ const images = [
 ];
 
 const qs = (selector) => document.querySelector(selector);
-
 const item = qs(".gallery")
 let addres = images.map(addr=>addr.url);
 let descr = images.map(dscr=>dscr.alt);
 let markup="";
-for(let i= 0; i<addres.length;i++){
-  markup +=`<img style="display:flex; margin-bottom:20px"class="image" src="${addres[i]}" alt="${descr[i]}" width="600px "/>`
-}
+[...images].forEach((it)=>{
+  markup +=`<img style="display:flex; margin-bottom:20px"class="image" src="${it.url}" alt="${it.alt}" width="600px "/>`
+})
+item.insertAdjacentHTML("beforeend", markup); 
 
-item.insertAdjacentHTML("beforeend", markup);
- 
